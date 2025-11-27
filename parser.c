@@ -104,6 +104,70 @@ bool parse_move(struct chess_move *move)
             c = getc(stdin);
             break;
         }
+        case = 'a':{
+            if((*move).piece != Pawn){
+                (*move).x0 = c - 'a';
+                c= getc(stdin);
+                break;
+            }
+        }
+        case = 'b':{
+            if((*move).piece != Pawn){
+                (*move).x0 = c - 'a';
+                c= getc(stdin);
+                break;
+            }
+        }
+        case = 'c':{
+            if((*move).piece != Pawn){
+                (*move).x0 = c - 'a';
+                c= getc(stdin);
+                break;
+            }
+        }
+        case = 'd':{
+            if((*move).piece != Pawn){
+                (*move).x0 = c - 'a';
+                c= getc(stdin);
+                break;
+            }
+        }
+        case = 'e':{
+            if((*move).piece != Pawn){
+                (*move).x0 = c - 'a';
+                c= getc(stdin);
+                break;
+            }
+        }
+        case = 'f':{
+            if((*move).piece != Pawn){
+                (*move).x0 = c - 'a';
+                c= getc(stdin);
+                break;
+            }
+        }
+        case = 'g':{
+            if((*move).piece != Pawn){
+                (*move).x0 = c - 'a';
+                c= getc(stdin);
+                break;
+            }
+        }
+        case = 'h':{
+            if((*move).piece != Pawn){
+                (*move).x0 = c - 'a';
+                c= getc(stdin);
+                break;
+            }
+        }
+        case = 'x':{
+            (*move).capture = true;
+            c = getc(stdin);
+            break;
+
+        default:
+            break;
+        }
     }
     }
 
