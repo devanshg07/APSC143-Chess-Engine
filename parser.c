@@ -169,5 +169,44 @@ bool parse_move(struct chess_move *move)
             break;
         }
     }
+    if(!(c == 'a' || c == 'b' || c == 'c' || c == 'd' || c == 'e' || c == 'f' || c == 'g' || c == 'h')){
+         panicf("parse error at character '%c'", c);
     }
+    (*move).x1 = c -'a';
+
+    c = getc(stdin);
+    if(!(c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8')){
+        panicf("parse error at character '%c'", c);
+    }
+    (*move).y1 = c - '1';
+
+    c = getc(stdin);
+    if(c == '='){
+        c = getc(stdin);
+        switch(c){
+            case 'Q':{
+            (*move).promotion = Queen;
+            break;
+            }
+        case 'R':{
+            (*move).promotion = Rook;
+            break;
+            }
+        case 'B':{
+            (*move).promotion = Bishop;
+            break;
+            }
+        case 'N':{
+            (*move).promotion = Knight;
+            break;
+            }
+        default:
+            panicf("parse error at character '%c'", c);
+            break;
+    }
+    } else if(c != ' ' && c != '\n' && c != '\r'){
+        ungetc(c,stdin);
+    }
+    return true;
+}
 
