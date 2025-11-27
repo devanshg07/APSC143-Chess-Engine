@@ -18,9 +18,11 @@ bool parse_move(struct chess_move *move)
     //switch for the first character
     switch (c)
     {
-        if(getc(stdin) != '-' || getc(stdin) != 'O'){
-            panicf("parse error at character '%c'\n", c);
-        }
+        case 'O':
+            if(getc(stdin) != '-' || getc(stdin) != 'O'){
+                panicf("parse error at character '%c'\n", c);
+            }
+        
     default:
         panicf("parse error at character '%c'\n", c);
     }
