@@ -62,5 +62,48 @@ bool parse_move(struct chess_move *move)
         } else{
             panicf("parse error at character '%c'", c);
         }
+    c = getc(stdin);
+    switch(c){
+        case '1':{
+            (*move).y0 = c - '1';
+            c = getc(stdin);
+            break;
+        }
+        case '2':{
+            (*move).y0 = c - '1';
+            c = getc(stdin);
+            break;
+        }
+        case '3':{
+            (*move).y0 = c - '1';
+            c = getc(stdin);
+            break;
+        }
+        case '4':{
+            (*move).y0 = c - '1';
+            c = getc(stdin);
+            break;
+        }
+        case '5':{
+            (*move).y0 = c - '1';
+            c = getc(stdin);
+            break;
+        }
+        case '6':{
+            (*move).y0 = c - '1';
+            c = getc(stdin);
+            break;
+        }
+        case '7':{
+            (*move).y0 = c - '1';
+            c = getc(stdin);
+            break;
+        }
+        case '8':{
+            (*move).y0 = c - '1';
+            c = getc(stdin);
+            break;
+        }
+    }
     }
 
