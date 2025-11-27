@@ -22,6 +22,12 @@ bool parse_move(struct chess_move *move)
             if(getc(stdin) != '-' || getc(stdin) != 'O'){
                 panicf("parse error at character '%c'\n", c);
             }
+            c = getc(stdin);
+            if(c == '-'){
+                if(getc(stdin) != '0'){
+                    (*move).castleQueens = true;
+                }
+            }
         
     default:
         panicf("parse error at character '%c'\n", c);
