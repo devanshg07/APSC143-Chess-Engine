@@ -48,7 +48,7 @@ bool parse_move(struct chess_move *move)
         }
         case 'B':{
             (*move).piece = Bishop;
-            break'
+            break;
         }
         case 'N':{
             (*move).piece = Knight;
@@ -56,6 +56,11 @@ bool parse_move(struct chess_move *move)
         }
     }
     default:
-        panicf("parse error at character '%c'\n", c);
+        if(c == 'a' || c == 'b' || c == 'c' || c == 'd' || c == 'e' || c == 'f' || c == 'g' || c == 'h'){
+        (*move).piece = Pawn;
+        (*move).x0 = c - 'a';
+        } else{
+            panicf("parse error at character '%c'", c);
+        }
     }
-}
+
