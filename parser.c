@@ -6,8 +6,6 @@
 bool parse_move(struct chess_move *move)
 {
     char c;
-
-    // Get the first character of the move, ignoring any initial spaces.
     do
     {
         c = getc(stdin);
@@ -16,11 +14,13 @@ bool parse_move(struct chess_move *move)
     // Check if we are at the end of input.
     if (c == '\n' || c == '\r')
         return false;
-
+    
+    //switch for the first character
     switch (c)
     {
-    // TODO: parse the move, starting from the first character. You are free to
-    // start from this switch/case as a template or use a different approach.
+        if(getc(stdin) != '-' || getc(stdin) != 'O'){
+            panicf("parse error at character '%c'\n", c);
+        }
     default:
         panicf("parse error at character '%c'\n", c);
     }
