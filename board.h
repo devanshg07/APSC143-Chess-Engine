@@ -25,16 +25,16 @@ const char *piece_string(enum chess_piece piece);
 
 struct chess_board
 {
+    char *board_state; //  = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR" as default
     enum chess_player next_move_player;
+    char *castling; // = "KQkq" by default
+    char *enpassant; // "-"
 
-    // TODO: what other fields are needed?
 };
 
 struct chess_move
 {
     enum chess_piece piece_type;
-
-    // TODO: what other fields are needed?
 };
 
 // Initializes the state of the board for a new chess game.
