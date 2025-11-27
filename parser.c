@@ -1,5 +1,6 @@
 #include "parser.h"
 #include <stdio.h>
+#include <ctype.h>
 #include "panic.h"
 
 bool parse_move(struct chess_move *move)
