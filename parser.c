@@ -26,9 +26,14 @@ bool parse_move(struct chess_move *move)
             if(c == '-'){
                 if(getc(stdin) != '0'){
                     (*move).castleQueens = true;
-                }
+                } 
+            } else {
+                unget(c,stdin);
+                (*move).castleKing = true;
             }
-        
+            (*move).piece = King;
+            return true;
+    }
     default:
         panicf("parse error at character '%c'\n", c);
     }
