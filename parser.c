@@ -18,13 +18,13 @@ bool parse_move(struct chess_move *move)
     //switch for the first character
     switch (c)
     {
-        case 'O':
+        case 'O':{
             if(getc(stdin) != '-' || getc(stdin) != 'O'){
                 panicf("parse error at character '%c'\n", c);
             }
             c = getc(stdin);
             if(c == '-'){
-                if(getc(stdin) != '0'){
+                if(getc(stdin) != 'O'){
                     (*move).castleQueens = true;
                 } 
             } else {
@@ -33,6 +33,27 @@ bool parse_move(struct chess_move *move)
             }
             (*move).piece = King;
             return true;
+        }
+        case 'K':{
+            (*move).piece = King;
+            break;
+        }
+        case 'Q':{
+            (*move).piece = Queen;
+            break;
+        }
+        case 'R':{
+            (*move).piece = Rook;
+            break;
+        }
+        case 'B':{
+            (*move).piece = Bishop;
+            break'
+        }
+        case 'N':{
+            (*move).piece = Knight;
+            break;
+        }
     }
     default:
         panicf("parse error at character '%c'\n", c);
